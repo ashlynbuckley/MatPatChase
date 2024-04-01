@@ -1,6 +1,6 @@
 # MatPatChase 🕹️
 
-##Overview
+## Overview
 Coded by Ashlyn Buckley, Karolina Fijalkowska and Avalon Brathwaite.<br>
 Art by Avalon Brathwaite.<br>
 This game is for our MA283 Linear Algebra optional project.<br><br>
