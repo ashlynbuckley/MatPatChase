@@ -9,6 +9,7 @@ public class Sprites{
     protected int x, y;
     protected int xSpeed = 0;
     protected int ySpeed = 0;
+    protected int width, height;
     protected Image gameImage;
     protected int winWidth;
 
