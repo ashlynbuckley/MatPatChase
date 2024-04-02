@@ -8,28 +8,25 @@ import java.io.File;
 import java.io.IOException;
 
 public class JumpScarePanel extends JPanel {
-	private BufferedImage jumpScareImage;
-	 private String gameOverText = "You Died!";
+	private Image jumpScareImage;
 	//jPanel overlay for game.java that allows me to display jumpscare
 	
-	public JumpScarePanel() {
-        try {
+	public JumpScarePanel(Image image) {
             // Load the jumpscare image from file
-            jumpScareImage = ImageIO.read(new File("jumpscare.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            jumpScareImage = image;
+        
     }
 	
 	 @Override
 	    public void paintComponent(Graphics g) {
+		 System.out.println("Printed inside jumpscare class!!");
 	        super.paintComponent(g);
 	        setBackground(Color.BLACK);
 
 	        // Draw the jumpscare image in the center of the panel
 	        if (jumpScareImage != null) {
-	            int x = (getWidth() - jumpScareImage.getWidth()) / 2;
-	            int y = (getHeight() - jumpScareImage.getHeight()) / 2;
+	            int x = 400;
+	            int y = 400;
 	            g.drawImage(jumpScareImage, x, y, this);
 	        }
 	    }
@@ -37,7 +34,7 @@ public class JumpScarePanel extends JPanel {
 	 @Override
 	    public Dimension getPreferredSize() {
 	        if (jumpScareImage != null) {
-	            return new Dimension(jumpScareImage.getWidth(), jumpScareImage.getHeight());
+	            return new Dimension(400, 400);
 	        }
 	        return super.getPreferredSize();
 	    }
