@@ -12,31 +12,25 @@ public class JumpScarePanel extends JPanel {
 	//jPanel overlay for game.java that allows me to display jumpscare
 	
 	public JumpScarePanel(Image image) {
-            // Load the jumpscare image from file
+            //load the jumpscare image from file
             jumpScareImage = image;
-        
+            
     }
 	
-	 @Override
-	    public void paintComponent(Graphics g) {
-		 System.out.println("Printed inside jumpscare class!!");
-	        super.paintComponent(g);
-	        setBackground(Color.BLACK);
-
-	        // Draw the jumpscare image in the center of the panel
-	        if (jumpScareImage != null) {
-	            int x = 400;
-	            int y = 400;
-	            g.drawImage(jumpScareImage, x, y, this);
-	        }
-	    }
-	 
-	 @Override
-	    public Dimension getPreferredSize() {
-	        if (jumpScareImage != null) {
-	            return new Dimension(400, 400);
-	        }
-	        return super.getPreferredSize();
-	    }
-	
+	@Override
+    public void paint(Graphics g) {
+        super.paintComponent(g);
+        setBackground(Color.BLACK);
+        //fillrect used to fill the full window
+        g.fillRect(0, 0, 1000, 1000);
+        
+        //draw the jumpscare image in the center of the panel
+        if (jumpScareImage != null) {
+            int x = (getWidth() - jumpScareImage.getWidth(this)) / 2;
+            int y = (getHeight() - jumpScareImage.getHeight(this)) / 2;
+            g.drawImage(jumpScareImage, x, y, this);
+        } else {
+            System.out.println("This image is null"); //used to debug
+        }
+    }
 }
